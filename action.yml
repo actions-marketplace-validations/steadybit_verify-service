@@ -1,0 +1,22 @@
+name: "Verify Service"
+description: "Verify that the desired resilience score has been reached"
+inputs:
+  apiAccessToken:
+    description: "Access Token to be used when accessing the Steadybit API"
+    required: true
+  baseURL:
+    description: "Base URL of the Steadybit server"
+    required: false
+    default: "https://platform.steadybit.io"
+  file:
+    description: "Path relative to repository root to the service definition file"
+    required: false
+    default: ".steadybit.yml"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    STEADYBIT_TOKEN: ${{ inputs.apiAccessToken }}
+    STEADYBIT_URL: ${{ inputs.baseURL }}
+  args:
+    - ${{ inputs.file }}
