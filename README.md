@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: steadybit/verify-service@v1
+      - uses: steadybit/verify-service@v2
         with:
           apiAccessToken: ${{ secrets.STEADYBIT_TOKEN }}
 ```
