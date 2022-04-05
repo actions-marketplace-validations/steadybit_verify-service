@@ -2,4 +2,4 @@
 
 filename="$1"
 
-steadybit service-definition verify "$GITHUB_WORKSPACE/$filename"
+steadybit service-definition verify -f "$GITHUB_WORKSPACE/$filename"
